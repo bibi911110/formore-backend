@@ -1,0 +1,61 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+use App\Permission;
+
+class Create$TABLE_NAME_TITLE$Table extends Migration
+{
+
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('$TABLE_NAME$', function (Blueprint $table) {
+            $FIELDS$
+        });
+
+        $permission = array(
+            array(
+                'name' => '$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$-index',
+                'guard_name' => 'web',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ),
+            array(
+                'name' => '$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$-create',
+                'guard_name' => 'web',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ),
+            array(
+                'name' => '$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$-edit',
+                'guard_name' => 'web',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ),
+            array(
+                'name' => '$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$-delete',
+                'guard_name' => 'web',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            )
+        );
+
+        Permission::insert($permission);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('$TABLE_NAME$');
+    }
+}
